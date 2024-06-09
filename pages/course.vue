@@ -12,19 +12,19 @@
     <div class="wrapper">
  
         <div class="chapters">
-            <h3>Chapters</h3>
+            <h4>Chapters</h4>
             <div class="chapter-item"
             v-for="chapter in chapters"
             :key="chapter.slug"
             >
-                <h4>{{ chapter.title }}</h4>
+                <h3>{{ chapter.title }}</h3>
                 <NuxtLink
                 v-for="(lesson, index) in chapter.lessons"
                 :key="lesson.slug"
                 :to="lesson.path"
                 >
-            {{ index + 1 }}
-            {{ lesson.title }} 
+            <!-- <p>{{ index + 1 }}</p> -->
+            <p>{{ lesson.title }} </p>
             </NuxtLink>
             </div>
         </div>
@@ -65,10 +65,16 @@ const {chapters} = useCourse();
     display: flex;
     flex-direction: column;
     width: 30vw;
+    height: 100%;
+}
+
+.chapters h4,h3 {
+    color: rgb(54, 253, 36);
 }
 .chapter-item {
     display: flex;
     flex-direction: column;
+    color: blanchedalmond;
 }
 
 .lessons {
@@ -76,10 +82,12 @@ const {chapters} = useCourse();
     padding: 10px;
     border-radius: 5px;
     width: 100%;
+    height: 100%;
 }
 
 .router-link-active {
-    color: rgb(247, 57, 57);
+    color: rgb(241, 232, 232);
+    transform: translateX(1.5em);
 }
 
 
