@@ -5,12 +5,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins",sans-serif;
-    background-color: rgb(131, 131, 245);
+    /* background-color: rgb(178, 178, 253); */
+}
+body {
+    background-color: #070113;
 }
 a {
     text-decoration: none;
 }
 a:hover {
     color: brown;
-    transform: translateX(2em);
+    transform: translateX(0.5em);
 }

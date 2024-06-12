@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
     <div class="header">
         <h1>
@@ -9,7 +6,7 @@
         </h1>
     </div>
 
-    <div class="wrapper">
+        <div class="wrapper">
  
         <div class="chapters">
             <h4>Chapters</h4>
@@ -32,7 +29,7 @@
         <div class="lessons">
             <NuxtPage />
         </div>
-    </div>
+        </div>
 </template>
 
 <script setup>
@@ -57,6 +54,7 @@ const {chapters} = useCourse();
     margin-right: auto;
     color: aliceblue;
 }
+    
 
 .chapters {
     background-color: #8c72fd;
@@ -89,6 +87,4 @@ const {chapters} = useCourse();
     color: rgb(241, 232, 232);
     transform: translateX(1.5em);
 }
-
-
 </style>
