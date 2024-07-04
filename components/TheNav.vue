@@ -5,15 +5,15 @@ const links = [
   [{
     label: 'Installation',
     icon: 'i-heroicons-home',
-    to: '/getting-started/installation'
+    to: '/'
   }, {
     label: 'Horizontal Navigation',
     icon: 'i-heroicons-chart-bar',
-    to: `${route.path.startsWith('/dev') ? '/dev' : ''}/components/horizontal-navigation`
+    to: '/'
   }, {
     label: 'Command Palette',
     icon: 'i-heroicons-command-line',
-    to: '/components/command-palette'
+    to: '/'
   }], [{
     label: 'Examples',
     icon: 'i-heroicons-light-bulb'
