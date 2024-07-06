@@ -27,13 +27,31 @@
         </div>
 
         <div class="lessons">
-            <NuxtPage />
+            <!-- <NuxtErrorBoundary> -->
+                <NuxtPage />
+                <!-- <template #error="{error}">
+                    <p>
+                        oh,no! Something Broke.
+                        <code>{{ error }}</code>
+                    </p>
+                    <p>
+                        <button @click="resetError(error)">
+                            Reset
+                        </button>
+                    </p>
+                </template>                 -->
+            <!-- </NuxtErrorBoundary> -->
         </div>
         </div>
 </template>
 
 <script setup>
 const {chapters} = useCourse();
+
+// const resetError = async (error) => {
+//     await navigateTo('/course').refr;
+//     error.value = null;
+// }
 </script>
 
 <style scoped>
@@ -84,7 +102,7 @@ const {chapters} = useCourse();
 }
 
 .router-link-active {
-    color: rgb(241, 232, 232);
+    color: rgb(0, 0, 0);
     transform: translateX(1.5em);
 }
 </style>

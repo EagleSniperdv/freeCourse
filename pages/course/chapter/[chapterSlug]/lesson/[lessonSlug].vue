@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrapper">
         <h2>Lessons</h2>
         <p>Lesson {{ chapter.number }} - {{ lesson.number }}</p>
         <h3> {{ chapter.title}}</h3>
@@ -10,6 +10,9 @@
         :model-value="isLessonComplete"
         @update:model-value="toggleComplete"
         />
+        <!-- <button class="err"
+            @click="throwError()";
+        >error</button> -->
     </div>
 </template>
 
@@ -17,17 +20,51 @@
 const course = useCourse();
 const route = useRoute();
 
+definePageMeta({
+    validate({params}){
+        const course = useCourse();
+
+        const chapter = course.chapters.find(
+            (chapter) => chapter.slug === params.chapterSlug
+        );
+
+        if (!chapter) {
+            return createError({
+                statusCode: 404,
+                message: 'Chapter not Found.'
+            });
+        }
+
+        const lesson = chapter.lessons.find(
+            (lesson) => lesson.slug === params.lessonSlug
+        );
+
+        if (!lesson) {
+            return createError({
+                statusCode: 404,
+                message: 'Lesson not Found.'
+            });
+        }
+
+        return true;
+    }
+});
+
 const chapter = computed(() => {
     return course.chapters.find(
         (chapter) => chapter.slug === route.params.chapterSlug
     );
 });
 
+
+
 const lesson = computed(() => {
     return chapter.value?.lessons.find(
         (lesson) => lesson.slug === route.params.lessonSlug
     )
 })
+
+
 
 const title = computed(() => {
     return `${lesson.value?.title} - ${course.title}`
@@ -68,4 +105,28 @@ const toggleComplete = () => {
 }
 console.log(course);
 
+// const createError = (message) => {
+//             return new Error(message);
+//         };
+
+//         const throwError = () => {
+//             throw createError('could not update1 frombtn');
+//         };
 </script>
+
+<style scoped>
+.wrapper .err {    
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #ff6b6b;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .err:hover {
+        background-color: #ff4b4b;
+    }
+
+</style>

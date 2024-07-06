@@ -11,7 +11,7 @@ body {
     background-color: #070113;
 }
 a {
-    text-decoration: none;
+    text-decoration: underline;
 }
 a:hover {
     color: brown;
