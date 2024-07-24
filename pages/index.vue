@@ -1,5 +1,6 @@
 <template>
   <div class="link-container">
+    <NuxtLink href="/course" class="styled-link">Go to Courses</NuxtLink>
     <NuxtLink :href="firstLesson.path" class="styled-link">Go to First Lesson</NuxtLink>
   </div>
 </template>
@@ -12,10 +13,13 @@ const firstLesson = useFirstLesson();
 <style scoped>
 .link-container {
   display: flex;
+  flex-direction: column;
+  gap: 15px;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   background-color: #f0f0f0;
+  border-radius: 15px;
 }
 
 .styled-link {

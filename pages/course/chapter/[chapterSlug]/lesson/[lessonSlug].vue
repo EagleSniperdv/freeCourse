@@ -21,7 +21,8 @@ const course = useCourse();
 const route = useRoute();
 
 definePageMeta({
-  middleware: function ({ params }, from) {
+  middleware: [
+    function ({ params }, from) {
     // validate({params}){
     const course = useCourse();
 
@@ -50,7 +51,9 @@ definePageMeta({
         })
       );
     }
-  },
+  }, 
+  'auth',
+],
 });
 
 const chapter = computed(() => {
@@ -109,7 +112,10 @@ console.log(course);
 </script>
 
 <style scoped>
-.wrapper .err {
+.wrapper {
+  width: 100%;
+}
+/* .wrapper .err {
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;
@@ -117,7 +123,8 @@ console.log(course);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+
+} */
 
 .err:hover {
   background-color: #ff4b4b;

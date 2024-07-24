@@ -1,7 +1,7 @@
 <template>
     <div class="login-container">
         <h1>Login to {{ title }}</h1>
-    <form >
+      <form >
         <div class="form-group">
             <label for="username">Username</label>
             <input id="username" v-model="username" type="text" required />
@@ -11,7 +11,7 @@
             <input id="password" v-model="password" type="password" required />
         </div>
         <button type="submit">Login with Github.</button>
-    </form>
+      </form>
         <p v-if="error">{{ error }}</p>
     </div>
 </template>

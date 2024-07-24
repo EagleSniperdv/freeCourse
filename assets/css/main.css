@@ -5,15 +5,29 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins",sans-serif;
-    /* background-color: rgb(178, 178, 253); */
+    list-style: none;
 }
 body {
+    /* background-color: rgb(178, 178, 253); */
     background-color: #070113;
+    width: 70vw;
+    margin: 0 auto;
 }
 a {
-    text-decoration: underline;
+    text-decoration: none;
 }
 a:hover {
     color: brown;
     transform: translateX(0.5em);
+}
+@media (max-width: 1024px) {
+    body {
+        width: 90%;
+    }
+}
+
+@media (max-width:450px) {
+    body {
+        width: 100%;
+    }
 }

@@ -70,7 +70,7 @@ const { chapters, title } = useCourse();
   justify-content: center;
   /* align-items: center; */
   gap: 25px;
-  width: 80vw;
+  width: 100%;
   height: 70vh;
   margin-left: auto;
   margin-right: auto;
