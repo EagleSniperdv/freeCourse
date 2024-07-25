@@ -35,7 +35,15 @@ const links = [
 
 <template>
   <UHorizontalNavigation
+    
     :links="links"
-    class="border-b border-gray-200 dark:border-gray-800"
+    class=" navv border-b border-gray-200 dark:border-gray-800"
   />
 </template>
+
+<style scoped>
+/* .navv{
+  position: absolute;
+  position: fixed;
+} */
+</style>
