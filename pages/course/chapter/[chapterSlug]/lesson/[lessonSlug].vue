@@ -113,7 +113,11 @@ console.log(course);
 
 <style scoped>
 .wrapper {
+  height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 /* .wrapper .err {
   padding: 10px 20px;
